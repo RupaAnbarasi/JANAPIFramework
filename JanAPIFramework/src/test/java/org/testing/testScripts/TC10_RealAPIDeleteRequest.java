@@ -1,4 +1,4 @@
-package org.testing.testScripts;
+/*package org.testing.testScripts;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -24,4 +24,4 @@ public class TC10_RealAPIDeleteRequest {
 
 }
 
-}
+}  */
