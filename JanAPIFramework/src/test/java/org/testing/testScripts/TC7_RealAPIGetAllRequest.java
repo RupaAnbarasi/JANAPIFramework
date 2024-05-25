@@ -19,7 +19,7 @@ public class TC7_RealAPIGetAllRequest {
 	http.getAllmethod("Real_URI_GETAll");
 	
 	
-	
+
 
 }
 

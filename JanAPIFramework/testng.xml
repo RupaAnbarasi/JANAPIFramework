@@ -16,12 +16,9 @@
        <class name="org.testing.testScripts.TC6_RealAPIPostRequest"/>
       
       <class name="org.testing.testScripts.TC7_RealAPIGetAllRequest"/>
-      
-     <!-- 
-     
       <class name="org.testing.testScripts.TC8_RealAPIGetParticularRequest"/>
       <class name="org.testing.testScripts.TC9_RealAPIPutRequest"/>
-          <class name="org.testing.testScripts.TC10_RealAPIDeleteRequest"/>-->
+      <class name="org.testing.testScripts.TC10_RealAPIDeleteRequest"/>
           
     </classes>
   </test> <!-- Test -->

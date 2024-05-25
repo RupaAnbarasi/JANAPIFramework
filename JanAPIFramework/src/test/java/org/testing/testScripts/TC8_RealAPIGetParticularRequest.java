@@ -1,4 +1,4 @@
-/*package org.testing.testScripts;
+package org.testing.testScripts;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -14,8 +14,8 @@ public class TC8_RealAPIGetParticularRequest {
 	
 	Properties pr=PropertiesHandle.loadPropertiesFile("../JanAPIFramework/URI.properties");
 	HTTPmethod http=new HTTPmethod(pr);
-	http.getParticularmethod("Real_URI_GETParticular");
+	http.getParticularmethod("Real_URI_GETParticular","1");
 	
 	}
 
-} */
+} 

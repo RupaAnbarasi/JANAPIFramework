@@ -26,20 +26,24 @@ public class HTTPmethod {
 		
 	   Response res=
 		given().contentType(ContentType.JSON)
+		//.header("Content-Type","Value")
 		.body(requestBody)
 		.when()
 		.post(uriValue);
 	   
+	   //System.out.println(res.getHeader("Content-Type"));
+		
+	   
 	   System.out.println("Response code is" +res.statusCode());
 	   System.out.println("Response data is");
 	   System.out.println(res.asString());
-		
+	  
 	   return res;
 		
 	}
 	
 	
-	public void getAllmethod(String urikeyName)
+	public Response getAllmethod(String urikeyName)
 	{
 		String uriValue =pr.getProperty(urikeyName);
 		
@@ -51,12 +55,12 @@ public class HTTPmethod {
 	   System.out.println("Response code is" +res.statusCode());
 	   System.out.println("Response data is");
 	   System.out.println(res.asString());
-		
+		return res;
 	}
 
 	
 	//public void getParticularmethod(String urikeyName)
-	public void getParticularmethod(String urikeyName, String endpoint)
+	public Response getParticularmethod(String urikeyName, String endpoint)
 	
 	{
 		String uriValue =pr.getProperty(urikeyName)+"/"+endpoint;
@@ -69,6 +73,7 @@ public class HTTPmethod {
 	   System.out.println("Response code is" +res.statusCode());
 	   System.out.println("Response data is");
 	   System.out.println(res.asString());
+	   return res;
 	}
 	
 	
@@ -96,7 +101,7 @@ public Response PUTmethod(String requestBody,String urikeyName,String endpointVa
 	
 
 	//public void deleteParticularmethod(String urikeyName)
-	public void deleteParticularmethod(String urikeyName, String endpoint)
+	public Response deleteParticularmethod(String urikeyName, String endpoint)
 	{
 		String uriValue =pr.getProperty(urikeyName) +"/"+endpoint;
 		
@@ -108,6 +113,7 @@ public Response PUTmethod(String requestBody,String urikeyName,String endpointVa
 	   System.out.println("Response code is" +res.statusCode());
 	   System.out.println("Response data is");
 	   System.out.println(res.asString());
+	   return res;
 		
 	}
 

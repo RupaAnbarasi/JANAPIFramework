@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.Properties;
 //import java.util.Random;
 
+import org.testing.responseValidation.ResponseValidation;
 import org.testing.testSteps.HTTPmethod;
 import org.testing.utilities.JsonHandle;
 import org.testing.utilities.PropertiesHandle;
 //import org.testing.utilities.jsonParsingUsingJsonPath;
 import org.testing.utilities.jsonReplacement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
@@ -28,6 +30,9 @@ public class TC4_PutRequest {
 		HTTPmethod http =new HTTPmethod(pr);
 		
 		Response resObj=http.PUTmethod(jsonRequestBody,"QA_URI1",TC1_PostRequest.returnIDvalue);
+		
+		/*Boolean result=ResponseValidation.StatuscodeValidate(201, resObj);
+		Assert.assertTrue(result);*/
 		
 		
 }

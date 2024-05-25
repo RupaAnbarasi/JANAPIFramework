@@ -1,4 +1,4 @@
-/*package org.testing.testScripts;
+package org.testing.testScripts;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -16,7 +16,7 @@ public class TC10_RealAPIDeleteRequest {
 	Properties pr=PropertiesHandle.loadPropertiesFile("../JanAPIFramework/URI.properties");
 	HTTPmethod http=new HTTPmethod(pr);
 	
-	http.deleteParticularmethod("Real_URI_Delete");
+	http.deleteParticularmethod("Real_URI_Delete","2");
 	
 	
 	
@@ -24,4 +24,4 @@ public class TC10_RealAPIDeleteRequest {
 
 }
 
-}  */
+}  

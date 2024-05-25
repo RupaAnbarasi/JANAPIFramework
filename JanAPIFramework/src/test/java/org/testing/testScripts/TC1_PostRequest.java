@@ -4,12 +4,20 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
 
+import org.testing.Assertion.Assertion;
+import org.testing.responseValidation.ResponseValidation;
 import org.testing.testSteps.HTTPmethod;
 import org.testing.utilities.JsonHandle;
 import org.testing.utilities.PropertiesHandle;
+import org.testing.utilities.ResportHandling;
 import org.testing.utilities.jsonParsingUsingJsonPath;
 import org.testing.utilities.jsonReplacement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.restassured.response.Response;
 
@@ -20,6 +28,9 @@ public class TC1_PostRequest {
 	
 	@Test
 	public void testcase1()throws IOException {
+		
+	ExtentReports report	=ResportHandling.HandleReport();
+	ExtentTest tc1 =report.startTest("TC1_PostRequest");
 		
 	
 		
@@ -34,7 +45,32 @@ public class TC1_PostRequest {
 		
 		Response resObj=http.POSTmethod(jsonRequestBody,"QA_URI1");
 		
-		returnIDvalue=jsonParsingUsingJsonPath.doParsing("id", resObj);
+	
+		Boolean result=ResponseValidation.StatuscodeValidate(201, resObj);
+		
+		Boolean dataresult=ResponseValidation.ResponseDataValidate("Mary", resObj, "FirstName");
+		Assert.assertTrue(dataresult);
+		
+		if((result)&&(dataresult))
+		{
+			tc1.log(LogStatus.PASS, "Test Case1 is pass...");
+			returnIDvalue=jsonParsingUsingJsonPath.doParsing("id", resObj);
+			report.endTest(tc1);
+			report.flush();
+		}
+		else
+		{
+			tc1.log(LogStatus.FAIL, "Test Case1 is Fail...");
+			Assert.assertTrue(result);
+			report.endTest(tc1);
+			report.flush();
+		}
+		
+		
+		
+		
+	
+	
 		
 	}
 

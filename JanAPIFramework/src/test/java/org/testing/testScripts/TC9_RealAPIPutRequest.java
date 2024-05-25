@@ -1,4 +1,4 @@
-/*package org.testing.testScripts;
+package org.testing.testScripts;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -25,12 +25,12 @@ public class TC9_RealAPIPutRequest {
 	        
 			HTTPmethod http =new HTTPmethod(pr);
 			
-			Response resObj=http.PUTmethod(jsonRequestBody,"Real_URI_Update");
+			Response resObj=http.PUTmethod(jsonRequestBody,"Real_URI_Update","21");
 			
-			//Response resObj=http.PUTmethod(jsonRequestBody,"QA_URI1",TC1_PostRequest.returnIDvalue);
+			
 			
 		}
 
 		
 
-} */
+} 
