@@ -8,12 +8,14 @@ import org.testing.utilities.JsonHandle;
 import org.testing.utilities.PropertiesHandle;
 import org.testing.utilities.jsonParsingUsingJsonPath;
 import org.testing.utilities.jsonReplacement;
+import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
 public class TC9_RealAPIPutRequest {
 	
 	
+	@Test
 	public void testcase9() throws IOException
 	{
 

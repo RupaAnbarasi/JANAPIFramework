@@ -16,6 +16,7 @@ public class TC3_GetParticularoRequest {
 	@Test
 	public void testcase3() throws IOException
 	{
+		
 	
 	Properties pr=PropertiesHandle.loadPropertiesFile("../JanAPIFramework/URI.properties");
 	HTTPmethod http=new HTTPmethod(pr);

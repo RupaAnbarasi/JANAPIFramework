@@ -13,6 +13,7 @@ import io.restassured.response.Response;
 
 public class TC2_GetAllRequest {
 	
+	
 	@Test
 	public void testcase2() throws IOException
 	{
@@ -29,4 +30,5 @@ public class TC2_GetAllRequest {
 	
 
 }
+	
 }

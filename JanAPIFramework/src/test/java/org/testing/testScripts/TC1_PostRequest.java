@@ -48,7 +48,7 @@ public class TC1_PostRequest {
 	
 		Boolean result=ResponseValidation.StatuscodeValidate(201, resObj);
 		
-		Boolean dataresult=ResponseValidation.ResponseDataValidate("Mary", resObj, "FirstName");
+		Boolean dataresult=ResponseValidation.ResponseDataValidate("Arokiyam", resObj, "FirstName");
 		Assert.assertTrue(dataresult);
 		
 		if((result)&&(dataresult))
@@ -64,6 +64,7 @@ public class TC1_PostRequest {
 			Assert.assertTrue(result);
 			report.endTest(tc1);
 			report.flush();
+			
 		}
 		
 		

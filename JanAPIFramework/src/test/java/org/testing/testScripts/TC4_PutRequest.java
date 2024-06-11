@@ -21,6 +21,7 @@ public class TC4_PutRequest {
 	public void testcase4() throws IOException
 	{
 
+		
     Properties pr=PropertiesHandle.loadPropertiesFile("../JanAPIFramework/URI.properties");
 		
     String jsonRequestBody=JsonHandle.ReadJsondata("../JanAPIFramework/src/test/java/org/testing/resources/InputRequestforUpdate.json");
