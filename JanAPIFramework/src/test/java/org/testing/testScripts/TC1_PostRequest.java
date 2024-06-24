@@ -44,9 +44,11 @@ public class TC1_PostRequest {
 		HTTPmethod http =new HTTPmethod(pr);
 		
 		Response resObj=http.POSTmethod(jsonRequestBody,"QA_URI1");
+		returnIDvalue=jsonParsingUsingJsonPath.doParsing("id", resObj);
 		
 	
-		Boolean result=ResponseValidation.StatuscodeValidate(201, resObj);
+		Boolean result=ResponseValidation.StatuscodeValidate(201, resObj,"TC1_PostRequest");
+		Assert.assertTrue(result);
 		
 		Boolean dataresult=ResponseValidation.ResponseDataValidate("Arokiyam", resObj, "FirstName");
 		Assert.assertTrue(dataresult);
@@ -54,14 +56,15 @@ public class TC1_PostRequest {
 		if((result)&&(dataresult))
 		{
 			tc1.log(LogStatus.PASS, "Test Case1 is pass...");
-			returnIDvalue=jsonParsingUsingJsonPath.doParsing("id", resObj);
+			
+			
 			report.endTest(tc1);
 			report.flush();
 		}
 		else
 		{
 			tc1.log(LogStatus.FAIL, "Test Case1 is Fail...");
-			Assert.assertTrue(result);
+			
 			report.endTest(tc1);
 			report.flush();
 			

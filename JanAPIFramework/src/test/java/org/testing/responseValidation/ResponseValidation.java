@@ -9,12 +9,12 @@ public class ResponseValidation {
 
 	
 	
-	public static Boolean StatuscodeValidate(int expectedStatusCode, Response res)
+	public static Boolean StatuscodeValidate(int expectedStatusCode, Response res,String classname)
 	{
 	
 		int actualStatusCode =res.getStatusCode();
 		
-			Boolean result=Assertion.assert1(actualStatusCode, expectedStatusCode);
+			Boolean result=Assertion.assert1(actualStatusCode, expectedStatusCode,classname);
 			return result;
 	}
 	
